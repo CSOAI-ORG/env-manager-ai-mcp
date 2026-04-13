@@ -1,0 +1,10 @@
+name: env-manager-ai-mcp
+description: "MEOK AI Labs — Env Manager tools for AI agents and LLMs"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/env-manager-ai-mcp
+license: MIT
+categories: [Developer Tools, Configuration]
+tags: [environment-variables, dotenv, config-management, secrets-management]
+runtime: python
+entrypoint: server.py

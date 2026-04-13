@@ -1,0 +1,23 @@
+{
+  "name": "env-manager-ai-mcp",
+  "description": "MEOK AI Labs \u2014 Env Manager tools for AI agents and LLMs",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/env-manager-ai-mcp",
+  "runtime": "python",
+  "entrypoint": "server.py",
+  "tools": [
+    "parse_env_file",
+    "validate_env",
+    "generate_env_template",
+    "compare_envs"
+  ],
+  "categories": [
+    "Developer Tools",
+    "Configuration"
+  ],
+  "pricing": {
+    "free": "50 calls/day",
+    "pro": "$9/mo"
+  }
+}
