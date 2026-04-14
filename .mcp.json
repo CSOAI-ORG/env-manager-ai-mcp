@@ -1,23 +1,89 @@
 {
   "name": "env-manager-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Env Manager tools for AI agents and LLMs",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/env-manager-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "MCP server for environment variable management tools.",
+  "version": "1.0.0",
   "tools": [
-    "parse_env_file",
-    "validate_env",
-    "generate_env_template",
-    "compare_envs"
-  ],
-  "categories": [
-    "Developer Tools",
-    "Configuration"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "parse_env_file",
+      "description": "Parse .env file content and analyze variables.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "validate_env",
+      "description": "Validate .env against requirements. required: comma-separated keys. type_hints: KEY:type pairs (int,url,email,bool).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "required": {
+            "type": "string"
+          },
+          "type_hints": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "generate_env_template",
+      "description": "Generate .env.example template from an existing .env file.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "include_comments": {
+            "type": "boolean"
+          },
+          "mask_values": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "compare_envs",
+      "description": "Compare two .env files and find differences.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "env_a": {
+            "type": "string"
+          },
+          "env_b": {
+            "type": "string"
+          },
+          "label_a": {
+            "type": "string"
+          },
+          "label_b": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "env_a",
+          "env_b"
+        ]
+      }
+    }
+  ]
 }

@@ -1,10 +1,50 @@
 name: env-manager-ai-mcp
-description: "MEOK AI Labs — Env Manager tools for AI agents and LLMs"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/env-manager-ai-mcp
-license: MIT
-categories: [Developer Tools, Configuration]
-tags: [environment-variables, dotenv, config-management, secrets-management]
-runtime: python
-entrypoint: server.py
+description: MCP server for environment variable management tools.
+version: 1.0.0
+tools:
+- name: parse_env_file
+  description: Parse .env file content and analyze variables.
+  parameters:
+  - name: content
+    type: string
+    required: true
+- name: validate_env
+  description: 'Validate .env against requirements. required: comma-separated keys.
+    type_hints: KEY:type pairs (int,url,email,bool).'
+  parameters:
+  - name: content
+    type: string
+    required: true
+  - name: required
+    type: string
+    required: false
+  - name: type_hints
+    type: string
+    required: false
+- name: generate_env_template
+  description: Generate .env.example template from an existing .env file.
+  parameters:
+  - name: content
+    type: string
+    required: true
+  - name: include_comments
+    type: boolean
+    required: false
+  - name: mask_values
+    type: boolean
+    required: false
+- name: compare_envs
+  description: Compare two .env files and find differences.
+  parameters:
+  - name: env_a
+    type: string
+    required: true
+  - name: env_b
+    type: string
+    required: true
+  - name: label_a
+    type: string
+    required: false
+  - name: label_b
+    type: string
+    required: false

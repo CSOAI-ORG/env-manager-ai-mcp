@@ -1,4 +1,9 @@
 """Env Manager AI MCP Server — Environment variable tools."""
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import re
 import time
 from typing import Any
@@ -32,8 +37,12 @@ def _parse_env(content: str) -> dict[str, str]:
     return result
 
 @mcp.tool()
-def parse_env_file(content: str) -> dict[str, Any]:
+def parse_env_file(content: str, api_key: str = "") -> dict[str, Any]:
     """Parse .env file content and analyze variables."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("parse_env_file"):
         return {"error": "Rate limit exceeded (50/day)"}
     parsed = _parse_env(content)
@@ -52,8 +61,12 @@ def parse_env_file(content: str) -> dict[str, Any]:
     }
 
 @mcp.tool()
-def validate_env(content: str, required: str = "", type_hints: str = "") -> dict[str, Any]:
+def validate_env(content: str, required: str = "", type_hints: str = "", api_key: str = "") -> dict[str, Any]:
     """Validate .env against requirements. required: comma-separated keys. type_hints: KEY:type pairs (int,url,email,bool)."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("validate_env"):
         return {"error": "Rate limit exceeded (50/day)"}
     parsed = _parse_env(content)
@@ -94,8 +107,12 @@ def validate_env(content: str, required: str = "", type_hints: str = "") -> dict
     return {"valid": valid, "issues": issues, "issue_count": len(issues), "variable_count": len(parsed)}
 
 @mcp.tool()
-def generate_env_template(content: str, include_comments: bool = True, mask_values: bool = True) -> dict[str, Any]:
+def generate_env_template(content: str, include_comments: bool = True, mask_values: bool = True, api_key: str = "") -> dict[str, Any]:
     """Generate .env.example template from an existing .env file."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("generate_env_template"):
         return {"error": "Rate limit exceeded (50/day)"}
     parsed = _parse_env(content)
@@ -130,8 +147,12 @@ def generate_env_template(content: str, include_comments: bool = True, mask_valu
     return {"template": template, "variable_count": len(parsed), "masked_count": sum(1 for k in parsed if any(p in k.lower() for p in sensitive_patterns))}
 
 @mcp.tool()
-def compare_envs(env_a: str, env_b: str, label_a: str = "env_a", label_b: str = "env_b") -> dict[str, Any]:
+def compare_envs(env_a: str, env_b: str, label_a: str = "env_a", label_b: str = "env_b", api_key: str = "") -> dict[str, Any]:
     """Compare two .env files and find differences."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("compare_envs"):
         return {"error": "Rate limit exceeded (50/day)"}
     a = _parse_env(env_a)
