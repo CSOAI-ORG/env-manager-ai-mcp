@@ -1,0 +1,52 @@
+{
+  "name": "env-manager-ai",
+  "description": "Env Manager Ai tools powered by MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/env-manager-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "parse_env_file",
+      "description": "Parse .env file content and analyze variables."
+    },
+    {
+      "name": "validate_env",
+      "description": "Validate .env against requirements. required: comma-separated keys. type_hints: KEY:type pairs (int,url,email,bool)."
+    },
+    {
+      "name": "generate_env_template",
+      "description": "Generate .env.example template from an existing .env file."
+    },
+    {
+      "name": "compare_envs",
+      "description": "Compare two .env files and find differences."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
