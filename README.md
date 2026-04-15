@@ -1,21 +1,33 @@
-# env-manager-ai-mcp
+# Env Manager AI MCP Server
 
-MCP server for environment variable management tools.
+> By [MEOK AI Labs](https://meok.ai) — Environment variable management, .env file parsing, and configuration tools
 
-## Tools
+## Installation
 
-- **parse_env_file** — Parse .env files with sensitivity detection
-- **validate_env** — Validate against required vars and type hints
-- **generate_env_template** — Generate .env.example templates
-- **compare_envs** — Diff two .env files
+```bash
+pip install env-manager-ai-mcp
+```
 
 ## Usage
 
 ```bash
-pip install mcp
 python server.py
 ```
 
-## Rate Limits
+## Tools
 
-50 calls/day per tool (free tier).
+This server provides environment variable management including:
+
+- .env file parsing and validation
+- Environment variable listing and searching
+- Variable comparison across environments
+- Secret detection and masking
+- .env file generation and merging
+
+## Authentication
+
+Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+
+## License
+
+MIT — MEOK AI Labs
