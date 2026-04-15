@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 [project]
 name = "env-manager-ai-mcp"
 version = "1.0.0"
-description = "MEOK AI Labs — env-manager-ai-mcp"
+description = "Env Manager Ai automation via MCP. Includes parse env file, validate env, generate env template. By MEOK AI Labs."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
 authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
