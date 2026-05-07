@@ -67,6 +67,11 @@ def parse_env_file(content: str, api_key: str = "") -> dict[str, Any]:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        content (str): The content to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -122,6 +127,13 @@ def validate_env(content: str, required: str = "", type_hints: str = "", api_key
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        content (str): The content to analyze or process.
+        required (str): The required to analyze or process.
+        type_hints (str): The type hints to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -198,6 +210,13 @@ def generate_env_template(content: str, include_comments: bool = True, mask_valu
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        content (str): The content to analyze or process.
+        include_comments (bool): The include comments to analyze or process.
+        mask_values (bool): The mask values to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -269,6 +288,14 @@ def compare_envs(env_a: str, env_b: str, label_a: str = "env_a", label_b: str = 
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        env_a (str): The env a to analyze or process.
+        env_b (str): The env b to analyze or process.
+        label_a (str): The label a to analyze or process.
+        label_b (str): The label b to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
