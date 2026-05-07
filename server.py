@@ -51,7 +51,23 @@ def _parse_env(content: str) -> dict[str, str]:
 
 @mcp.tool()
 def parse_env_file(content: str, api_key: str = "") -> dict[str, Any]:
-    """Parse .env file content and analyze variables."""
+    """Parse .env file content and analyze variables.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -76,7 +92,23 @@ def parse_env_file(content: str, api_key: str = "") -> dict[str, Any]:
 
 @mcp.tool()
 def validate_env(content: str, required: str = "", type_hints: str = "", api_key: str = "") -> dict[str, Any]:
-    """Validate .env against requirements. required: comma-separated keys. type_hints: KEY:type pairs (int,url,email,bool)."""
+    """Validate .env against requirements. required: comma-separated keys. type_hints: KEY:type pairs (int,url,email,bool).
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -123,7 +155,22 @@ def validate_env(content: str, required: str = "", type_hints: str = "", api_key
 
 @mcp.tool()
 def generate_env_template(content: str, include_comments: bool = True, mask_values: bool = True, api_key: str = "") -> dict[str, Any]:
-    """Generate .env.example template from an existing .env file."""
+    """Generate .env.example template from an existing .env file.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -164,7 +211,23 @@ def generate_env_template(content: str, include_comments: bool = True, mask_valu
 
 @mcp.tool()
 def compare_envs(env_a: str, env_b: str, label_a: str = "env_a", label_b: str = "env_b", api_key: str = "") -> dict[str, Any]:
-    """Compare two .env files and find differences."""
+    """Compare two .env files and find differences.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
