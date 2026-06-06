@@ -1,0 +1,25 @@
+{
+  "name": "env-manager-ai-mcp",
+  "title": "Env Manager Ai Mcp",
+  "description": "Env Manager Ai automation via MCP. Includes parse env file, validate env, generate env template. By MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "parse_env_file"
+    },
+    {
+      "name": "validate_env"
+    },
+    {
+      "name": "generate_env_template"
+    },
+    {
+      "name": "compare_envs"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
-"""Env Manager AI MCP Server — Environment variable tools."""
+"""
+Env Manager AI MCP Server — Environment variable tools."""
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import re
@@ -89,7 +89,7 @@ def parse_env_file(content: str, api_key: str = "") -> dict[str, Any]:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("parse_env_file"):
@@ -151,7 +151,7 @@ def validate_env(content: str, required: str = "", type_hints: str = "", api_key
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("validate_env"):
@@ -234,7 +234,7 @@ def generate_env_template(content: str, include_comments: bool = True, mask_valu
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("generate_env_template"):
@@ -313,7 +313,7 @@ def compare_envs(env_a: str, env_b: str, label_a: str = "env_a", label_b: str = 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("compare_envs"):
@@ -331,5 +331,8 @@ def compare_envs(env_a: str, env_b: str, label_a: str = "env_a", label_b: str = 
         "total_a": len(a), "total_b": len(b), "identical_count": len(same)
     }
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

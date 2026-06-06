@@ -1,0 +1,9 @@
+# env-manager-ai-mcp - Auto-trigger Rules
+
+When the user asks about env manager, use env-manager-ai-mcp tools: parse_env_file, validate_env, generate_env_template, compare_envs
+
+**Env Manager AI MCP Server — Environment variable tools.**
+
+Install: `pip install env-manager-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

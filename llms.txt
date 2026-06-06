@@ -1,0 +1,33 @@
+# env-manager-ai-mcp
+# **Env Manager AI MCP Server — Environment variable tools.**
+
+## Install
+```bash
+pip install env-manager-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `parse_env_file`
+Parse .env file content and analyze variables.
+
+### `validate_env`
+Validate .env against requirements. required: comma-separated keys. type_hints: KEY:type pairs (int,url,email,bool).
+
+### `generate_env_template`
+Generate .env.example template from an existing .env file.
+
+### `compare_envs`
+Compare two .env files and find differences.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
