@@ -1,0 +1,59 @@
+{
+  "name": "env-manager-ai-mcp",
+  "description": "Env Manager Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/env-manager-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "parse_env_file",
+      "name": "Parse Env File",
+      "description": "parse_env_file via env-manager-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "validate_env",
+      "name": "Validate Env",
+      "description": "validate_env via env-manager-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_env_template",
+      "name": "Generate Env Template",
+      "description": "generate_env_template via env-manager-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "compare_envs",
+      "name": "Compare Envs",
+      "description": "compare_envs via env-manager-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

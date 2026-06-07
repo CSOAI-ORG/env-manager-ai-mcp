@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "env-manager-ai-mcp",
+    "description": "Env Manager Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "env-manager-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "parse_env_file",
+      "validate_env",
+      "generate_env_template",
+      "compare_envs"
+    ]
+  }
+}
